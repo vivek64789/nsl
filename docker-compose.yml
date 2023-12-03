@@ -1,6 +1,21 @@
 version: "3.8"
 
 services:
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./frontend_nginx.conf:/etc/nginx/conf.d/frontend_nginx.conf
+      - ./backend_nginx.conf:/etc/nginx/conf.d/backend_nginx.conf
+      - certs:/etc/letsencrypt
+      - webroot:/var/www/certbot
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend
+      - db
+      - frontend
+
   # Define the database service
   db:
     image: postgres:latest
