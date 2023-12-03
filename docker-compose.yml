@@ -4,11 +4,10 @@ services:
   nginx:
     image: nginx:alpine
     volumes:
-      - ./frontend_nginx.conf:/etc/nginx/conf.d/frontend_nginx.conf
+      - ./frontend_nginx.conf:/etc/nginx/conf.d/default.conf
       - ./backend_nginx.conf:/etc/nginx/conf.d/backend_nginx.conf
       - certs:/etc/letsencrypt
       - webroot:/var/www/certbot
-    command: /bin/sh -c "rm -f /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
 
     ports:
       - "80:80"
@@ -17,7 +16,7 @@ services:
       - backend
       - db
       - frontend
-  
+
   certbot:
     image: certbot/certbot
     volumes:
