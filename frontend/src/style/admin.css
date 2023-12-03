@@ -1,0 +1,95 @@
+.season-crud {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Seasons Table */
+.seasons-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.seasons-table th, .seasons-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.seasons-table th {
+  background-color: #f2f2f2;
+}
+
+/* Create Form */
+.create-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.create-form input[type="text"],
+.create-form input[type="date"],
+.create-form button[type="submit"] {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.create-form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Delete Button */
+.seasons-table button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Update Button (Placeholder) */
+.seasons-table button.update-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Center Align Text */
+.text-center {
+  text-align: center;
+}
+
+/* Header Styles */
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+  .create-form input[type="text"],
+  .create-form input[type="date"],
+  .create-form button[type="submit"] {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .seasons-table th, .seasons-table td {
+    font-size: 14px;
+  }
+}

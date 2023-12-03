@@ -1,0 +1,32 @@
+@mixin respond($phone){
+    @if $phone == ss-phone{
+        @media (max-width: 400px){ //600px
+            @content
+        };
+    }
+    @if $phone == small-phone{
+        @media (max-width: 575.98px){ //600px
+            @content
+        };
+    }
+    @if $phone == phone{
+        @media (max-width: 767.98px){ //600px
+            @content
+        };
+    }
+    @if $phone == tab-port{
+        @media (max-width: 991.98px){ //900px
+            @content
+        };
+    }
+    @if $phone == tab-land{
+        @media (max-width: 1199.98px){ //1200px
+            @content
+        };
+    }
+    @if $phone == big-desktop{
+        @media (max-width: 1399.98px){ //1800 + px
+            @content
+        };
+    }
+}

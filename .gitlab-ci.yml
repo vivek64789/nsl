@@ -1,0 +1,40 @@
+stages:
+  - build
+  - deploy
+
+# Build
+build:
+  image: node:latest
+  stage: build
+  variables:
+    NODE_OPTIONS: openssl-legacy-provider
+  script:
+    - cd frontend
+    - npm ci --only=production
+    - CI=false npm run build     # build the React app, set CI=false because CI=true treats all warnings as errors
+    - find / -type f -name index.html 2>/dev/null
+  artifacts:
+    paths:
+      - frontend/build/
+    expire_in: 1 week
+
+# Deploy
+deploy:
+  image: alpine
+  stage: deploy
+  environment:
+    name: release
+    url: https://www.nepalsuperleague.com
+  variables:
+    USER: 'ubuntu'
+    HOST: 'ec2-65-2-156-255.ap-south-1.compute.amazonaws.com'
+  before_script:
+    - apk add openssh-client rsync
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 400 ~/.ssh
+  script:
+    - rsync -azpc -e "ssh -o StrictHostKeyChecking=no" frontend/build/ ${USER}@${HOST}:/var/www/nsl/
+  only:
+    - main

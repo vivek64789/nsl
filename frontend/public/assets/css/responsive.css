@@ -1,0 +1,77 @@
+@media(max-width: 1200px){
+	.banner-caption{
+		width: 100%;
+	}
+	.banner-info{
+		width: 70%;
+	}
+	.latest-result h1{
+		font-size: 22px;
+	}
+	.club-logo strong{
+		font-size: 18px;
+		margin: 5px 0;
+	}
+}
+@media(max-width: 992px){
+	.cs-wrap:before{
+		width: 100%;
+	}
+}
+@media(max-width: 768px){
+	.banner-caption{
+		left: 15px;
+		width: 95%;
+	}
+	.col-xs-0, .mobile-hide{
+		display: none;
+	}
+	.score-bord span{
+		width: 30px;
+		padding: 4px;
+	}
+	.club-logo strong{
+		font-size: 14px;
+		text-transform: inherit;
+		font-weight: 400;
+		text-align: left;
+	}
+	.mobile-show{
+		display: block;
+	}
+	.latest-result{
+		bottom: -140px;
+	}
+	.about-content{
+		margin-bottom: 3rem;
+	}
+	.no-margin{
+		margin: 0;
+	}
+	.front-gallery-image img{
+		position: inherit;
+	    height: unset;
+	    object-fit: revert;
+	}
+	.nav-menu ul li a{
+		font-size: 23px;
+	}
+}
+
+
+@media(max-width: 550px){
+	.social-search label{
+		display: none;
+	}
+	.cs-details{
+	    padding-left: 0rem;
+	}
+}
+@media(max-width: 399px){
+	.social-icon{
+		display: none;
+	}
+	footer .social-icon{
+		display: block;
+	}
+}
