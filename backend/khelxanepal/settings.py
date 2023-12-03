@@ -133,6 +133,19 @@ CORS_ALLOWED_ORIGINS = [
     "https://api.nepalsuperleague.com",
     "http://api.nepalsuperleague.com",
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "https://nepalsuperleague.com",
+    "https://www.nepalsuperleague.com",
+    "http://nepalsuperleague.com",
+    "http://www.nepalsuperleague.com",
+    "http://139.59.64.25:3000",
+    "https://139.59.64.25:3000",
+    "https://api.nepalsuperleague.com",
+    "http://api.nepalsuperleague.com",
+]
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
