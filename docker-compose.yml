@@ -8,6 +8,8 @@ services:
       - ./backend_nginx.conf:/etc/nginx/conf.d/backend_nginx.conf
       - certs:/etc/letsencrypt
       - webroot:/var/www/certbot
+    command: /bin/sh -c "rm -f /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+
     ports:
       - "80:80"
       - "443:443"
